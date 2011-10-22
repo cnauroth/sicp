@@ -46,17 +46,16 @@
 
 
 (define (f-iterative n)
-  (define (f-iterative-internal i n a b c)
+  (define (f-iterative-internal i a b c)
     (if (= i n)
         a
         (f-iterative-internal (+ i 1)
-                              n
                               (if (< i 2)
                                   (+ i 1)
                                   (+ a (* 2 b) (* 3 c)))
                               a
                               b)))
-  (f-iterative-internal 0 n 0 0 0))
+  (f-iterative-internal 0 0 0 0))
 
 (display (f-iterative 0))
 (newline)
